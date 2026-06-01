@@ -37,7 +37,6 @@ public class AdministradorController {
     public ResponseEntity<UsuariosModel> editar(@PathVariable Long id, @RequestBody UsuariosModel detalles) {
         return administradorService.buscarPorId(id)
                 .map(admin -> {
-                    // Usamos los métodos exactos que existen en tu UsuariosModel:
                     admin.setCorreo(detalles.getCorreo());
                     admin.setPassword(detalles.getPassword());
                     admin.setRol(detalles.getRol());
